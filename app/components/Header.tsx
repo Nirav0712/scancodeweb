@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { FaSearch, FaShoppingCart, FaUser, FaHeart, FaBars } from "react-icons/fa";
 
-export default function Header(){
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -28,13 +28,12 @@ export default function Header(){
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "shadow-lg" : ""
-      }`}
+      className={` fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? "shadow-lg" : ""
+        }`}
     >
       {/* TOP BAR */}
-      <div className="text-center text-white text-sm py-2.5 bg-linear-to-r from-[#1e3a5f] via-[#2b4b7a] to-[#345f8c] font-medium tracking-wide relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/10 shimmer"></div>
+      <div className="text-center text-white text-sm py-2.5 bg-gradient-to-r from-[#1e3a5f] via-[#2b4b7a] to-[#345f8c] font-medium tracking-wide relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/5 shimmer"></div>
 
         <span className="relative inline-block animate-bounce-slow">✨</span>
         Free metro delivery* Sign Up for $30 off your order!
@@ -43,11 +42,10 @@ export default function Header(){
 
       {/* MAIN HEADER */}
       <div
-        className={`transition-all duration-500 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md"
-            : "bg-white/90 backdrop-blur-sm"
-        } border-b border-gray-200/50`}
+        className={`transition-all duration-500 ${isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md"
+          : "bg-white"
+          } border-b border-gray-200/50`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3 lg:py-4">
@@ -152,88 +150,88 @@ export default function Header(){
 
       {/* NAVIGATION */}
       <nav className="hidden md:block bg-white border-b border-gray-200 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-center gap-10 py-4 text-[#1e3a5f] text-bold ">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-center gap-10 py-4 text-[#1e3a5f] text-bold ">
 
-          <Link href="/" className="nav-link hover:underline hover:text-orange-400">
-            Home
-          </Link>
+            <Link href="/" className="nav-link hover:underline hover:text-orange-400">
+              Home
+            </Link>
 
-          <Link href="/about" className="nav-link hover:underline hover:text-orange-400">
-            About Us
-          </Link>
+            <Link href="/about" className="nav-link hover:underline hover:text-orange-400">
+              About Us
+            </Link>
 
-          {/* PRODUCTS MEGA MENU */}
-          <div
-            className="relative"
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
-            <button className="nav-link flex items-center gap-1 hover:underline hover:text-orange-400">
-              Products <ChevronDown size={16} />
-            </button>
+            {/* PRODUCTS MEGA MENU */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpen(true)}
+              onMouseLeave={() => setOpen(false)}
+            >
+              <button className="nav-link flex items-center gap-1 hover:underline hover:text-orange-400">
+                Products <ChevronDown size={16} />
+              </button>
 
-            {open && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-5 w-130 bg-[#2b2b2b] text-white shadow-xl rounded-md overflow-hidden grid grid-cols-2">
+              {open && (
+                <div className="absolute left-1/2 -translate-x-1/2 w-130 bg-[#2b2b2b] text-white shadow-xl rounded-md overflow-hidden grid grid-cols-2">
 
-                {/* LEFT COLUMN */}
-                <div className="border-r border-gray-600">
+                  {/* LEFT COLUMN */}
+                  <div className="border-r border-gray-600">
 
-                  <div className="bg-[#f58220] px-5 py-3 font-semibold flex justify-between items-center">
-                    Printing Scanning Solutions
-                    <ChevronRight size={16} />
+                    <div className="bg-[#f58220] px-5 py-3 font-semibold flex justify-between items-center">
+                      Printing Scanning Solutions
+                      <ChevronRight size={16} />
+                    </div>
+
+                    <ul className="p-4 space-y-3 text-sm">
+                      <li className="hover:text-orange-400 cursor-pointer">
+                        Labels
+                      </li>
+                      <li className="hover:text-orange-400 cursor-pointer">
+                        Thermal Transfer Ribbons
+                      </li>
+                      <li className="hover:text-orange-400 cursor-pointer">
+                        RFID Solutions
+                      </li>
+                    </ul>
+
                   </div>
 
-                  <ul className="p-4 space-y-3 text-sm">
-                    <li className="hover:text-orange-400 cursor-pointer">
-                      Labels
-                    </li>
-                    <li className="hover:text-orange-400 cursor-pointer">
-                      Thermal Transfer Ribbons
-                    </li>
-                    <li className="hover:text-orange-400 cursor-pointer">
-                      RFID Solutions
-                    </li>
-                  </ul>
+                  {/* RIGHT COLUMN */}
+                  <div className="p-5 space-y-4 text-sm">
+
+                    <p className="hover:text-orange-400 cursor-pointer">
+                      Barcode Label Printer
+                    </p>
+
+                    <p className="hover:text-orange-400 cursor-pointer">
+                      Print Engine
+                    </p>
+
+                    <p className="hover:text-orange-400 cursor-pointer">
+                      Barcode Scanner
+                    </p>
+
+                    <p className="hover:text-orange-400 cursor-pointer">
+                      Mobile Computers & Tablets
+                    </p>
+
+                  </div>
 
                 </div>
+              )}
+            </div>
 
-                {/* RIGHT COLUMN */}
-                <div className="p-5 space-y-4 text-sm">
+            <Link href="/solutions" className="nav-link hover:underline hover:text-orange-400">
+              Auto ID Solutions
+            </Link>
 
-                  <p className="hover:text-orange-400 cursor-pointer">
-                    Barcode Label Printer
-                  </p>
+            <Link href="/contact" className="nav-link hover:underline hover:text-orange-400">
+              Contact Us
+            </Link>
 
-                  <p className="hover:text-orange-400 cursor-pointer">
-                    Print Engine
-                  </p>
-
-                  <p className="hover:text-orange-400 cursor-pointer">
-                    Barcode Scanner
-                  </p>
-
-                  <p className="hover:text-orange-400 cursor-pointer">
-                    Mobile Computers & Tablets
-                  </p>
-
-                </div>
-
-              </div>
-            )}
           </div>
-
-          <Link href="/solutions" className="nav-link hover:underline hover:text-orange-400">
-            Auto ID Solutions
-          </Link>
-
-          <Link href="/contact" className="nav-link hover:underline hover:text-orange-400">
-            Contact Us
-          </Link>
-
         </div>
-      </div>
-    </nav>
+      </nav>
     </header>
   );
 }
