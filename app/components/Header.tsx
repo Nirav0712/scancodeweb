@@ -32,7 +32,7 @@ export default function Header() {
         }`}
     >
       {/* TOP BAR */}
-      <div className="text-center text-white text-sm py-2.5 bg-gradient-to-r from-[#1e3a5f] via-[#2b4b7a] to-[#345f8c] font-medium tracking-wide relative overflow-hidden">
+      <div className="text-center text-white text-sm py-2.5 bg-linear-to-r from-[#1e3a5f] via-[#2b4b7a] to-[#345f8c] font-medium tracking-wide relative overflow-hidden">
         <div className="absolute inset-0 bg-white/5 shimmer"></div>
 
         <span className="relative inline-block animate-bounce-slow">✨</span>
