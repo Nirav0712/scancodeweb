@@ -1,88 +1,114 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
   {
     label: "Hoodies",
-    emoji: "🧥",
-    bg: "#1a1a2e",
-    color: "#ec4899",
+    image: "/images/categoryimg-1.webp",
   },
   {
     label: "Tote Bags",
-    emoji: "👜",
-    bg: "#0f766e",
-    color: "#34d399",
+    image: "/images/categoryimg-1.webp",
   },
   {
     label: "T-Shirts",
-    emoji: "👕",
-    bg: "#84cc16",
-    color: "#fff",
+    image: "/images/categoryimg-1.webp",
   },
   {
-    label: "Business Cards",
-    emoji: "💳",
-    bg: "#f43f5e",
-    color: "#fff",
+    label: "Business Card",
+    image: "/images/categoryimg-1.webp",
   },
   {
     label: "Branded Items",
-    emoji: "🎁",
-    bg: "#818cf8",
-    color: "#fff",
+    image: "/images/categoryimg-1.webp",
   },
 ];
 
 export default function CategoriesSection() {
   return (
-    <section
-      className="relative pt-48 pb-24"
-      style={{ background: "#f0f3f9" }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-14">
-          <p className="section-label">// TOP CATEGORIES //</p>
-          <h2 className="section-heading">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-blue-500 font-medium tracking-widest">
+            // TOP CATEGORIES //
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
             Explore Our Print{" "}
-            <span className="highlight">Categories</span>
+            <span className="text-red-400 border-b-4 border-red-400">
+              Categories
+            </span>
           </h2>
         </div>
 
-        {/* Category circles */}
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-12 mb-14">
+        {/* Categories */}
+        <div className="flex flex-wrap justify-center gap-10">
+
           {categories.map((cat, i) => (
             <Link
-              href="/shop"
               key={i}
-              className="flex flex-col items-center gap-3 group cursor-pointer"
+              href="/shop"
+              className="group flex justify-center transform transition-transform duration-500 hover:scale-130"
             >
-              <div
-                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full flex items-center justify-center shadow-lg
-                  transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl"
-                style={{ background: cat.bg }}
-              >
-                <span className="text-6xl lg:text-7xl">{cat.emoji}</span>
+              <div className="relative w-52 h-52 rounded-full overflow-hidden cursor-pointer">
+
+                {/* Image */}
+                <Image
+                  src={cat.image}
+                  alt={cat.label}
+                  fill
+                  className="object-cover"
+                />
+
+                {/* Gradient hover circle */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className="w-40 h-40 rounded-full bg-linear-to-br from-purple-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-white"
+                  >
+                    {/* Arrow */}
+                    <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center mb-2">
+                      →
+                    </div>
+
+                    {/* Text */}
+                    <span className="font-semibold">{cat.label}</span>
+                  </div>
+                </div>
+
               </div>
-              <span className="text-gray-800 font-semibold text-base tracking-wide">
-                {cat.label}
-              </span>
             </Link>
           ))}
+
         </div>
 
-        {/* View More button */}
-        <div className="text-center">
+        
+        <div className="text-center mt-16">
+  <Link href="/shop" className="relative inline-block group">
+    
+    {/* border layer */}
+    <span className="absolute inset-0 rounded-full border-2 border-teal-400 translate-x-2 translate-y-2 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+
+    {/* button */}
+    <span className="relative px-8 py-3 rounded-full text-white font-semibold bg-linear-to-r from-purple-500 to-teal-400 shadow-lg block">
+      View More
+    </span>
+
+  </Link>
+</div>{/* Button */}
+
+        {/* <div className="text-center mt-16">
           <Link
             href="/shop"
-            className="pill-btn pill-btn-gradient text-lg shadow-lg shadow-purple-500/30"
+            className="px-8 py-3 rounded-full text-white font-semibold bg-linear-to-r from-purple-500 to-teal-400 shadow-lg"
           >
             View More
           </Link>
-        </div>
+        </div> */}
+
       </div>
     </section>
   );
