@@ -15,7 +15,6 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Header />
       <HeroSection />
       <CategoriesSection />
       <AboutSection />
@@ -27,7 +26,6 @@ export default function Home() {
       <PartnersSection />
       <TeamSection />
       <TestimonialsSection />
-      <Footer />
     </>
   );
 }

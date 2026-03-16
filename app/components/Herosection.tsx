@@ -8,8 +8,13 @@ export default function HeroSection() {
     <section
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #2c3e8c 0%, #3b5fe2 25%, #5a40c8 55%, #7c3aed 80%, #2c3e8c 100%)",
-        minHeight: "100vh",
+        // background: "linear-gradient(135deg, #2c3e8c 0%, #3b5fe2 25%, #5a40c8 55%, #7c3aed 80%, #2c3e8c 100%)",
+        // minHeight: "100vh",
+        backgroundImage: "url('/images/herosection/Frame1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "110vh",
       }}
     >
       {/* Decorative floating shapes */}

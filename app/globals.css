@@ -228,3 +228,23 @@ body {
   background: #6c4fdc;
   border-radius: 3px;
 }
+
+
+.draw-path {
+  /* fill: transparent; */
+  stroke: #34823d;
+  stroke-width: 3;
+  stroke-dasharray: 828.978;
+  stroke-dashoffset: 828.978;
+  animation: drawPath 3s linear infinite;
+}
+
+@keyframes drawPath {
+  0% {
+    stroke-dashoffset: 828.978;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
