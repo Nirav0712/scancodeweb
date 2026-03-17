@@ -215,7 +215,7 @@ export default function FeaturesFan() {
     : 340;
 
   // Semi-circle SVG dimensions (2R wide × R tall)
-  const svgW = radius * 2 + 50;
+  const svgW = radius * 2 + 60;
   const svgH = radius + 30;
 
   return (
@@ -283,14 +283,15 @@ export default function FeaturesFan() {
 
             {/* Center label + progress — inside the semi-circle */}
             <div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-4"
+              className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-4"
               style={{ width: radius * 1.1, height: svgH * 0.55 }}
             >
               <p
                 ref={activeLabelRef}
                 className="font-bold text-center px-4 leading-tight text-coral"
                 style={{
-                  fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)",
+                  // fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)",
+                  fontSize: "1.2rem",
                   color: "#f97060",
                   maxWidth: "200px",
                 }}
@@ -340,7 +341,7 @@ export default function FeaturesFan() {
                 }}
                 className="absolute"
                 style={{
-                  width: "clamp(150px, 20vw, 200px)",
+                  width: "clamp(150px, 20vw, 250px)",
                   // Initial off-screen position handled by GSAP
                   willChange: "transform, opacity",
                 }}
@@ -358,14 +359,14 @@ export default function FeaturesFan() {
                         ? "2px solid #f97060"
                         : "1px solid rgba(229,231,235,0.8)",
                     transition: "border 0.3s, box-shadow 0.3s",
-                    backdropFilter: "blur(8px)",
+                    // backdropFilter: "blur(8px)",
                   }}
                 >
                   <div className="text-4xl leading-none">{card.emoji}</div>
-                  <h4 className="font-bold text-gray-900 text-sm leading-snug">
+                  <h4 className="font-bold text-gray-900 text-md leading-snug">
                     {card.title}
                   </h4>
-                  <p className="text-gray-500 text-xs leading-relaxed">
+                  <p className="text-gray-500 text-sm leading-relaxed">
                     {card.desc}
                   </p>
                 </div>

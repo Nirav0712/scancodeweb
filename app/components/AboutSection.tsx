@@ -11,7 +11,7 @@ export default function AboutSection() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "85vh"
+        height: "95vh"
       }}>
 
       <svg
